@@ -7,6 +7,7 @@ $(document).ready(function(){
 		const $results = $("#results");
 		const $searchBtn = $("#searchBtn");
 		const youtubeURL = "https://www.googleapis.com/youtube/v3/search";
+    const fetchURL = "https://www.googleapis.com/youtube/v3/search"
 		const $collection = $(".collection");
 
 
@@ -42,7 +43,7 @@ $(document).ready(function(){
 				'part': 'snippet',
 				'q': query,
 				'type': '',
-				key: 'AIzaSyCHHIMpvm5pbBW2f7oWomB4dLo0blXLXv8'
+				key: ''
 			}, 
 			function(data){
 	     	//call the handleData function 
@@ -121,11 +122,10 @@ $(document).ready(function(){
 						'</ul>' +
 						'</div>' +
 						'</li>';
-
 		// add the built HTML template to the results div
 		$results.append(HTML_TEMPLATE);
-
-		} // end of generateHTML
+  } // end of generateHTML
+  console.log($results)
 
 		let $testBtn = $("#testBtn").on("click", function(){
 			handleData(testData);
