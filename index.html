@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Youtube Search API</title>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- Materialize Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+	<!-- Materialize Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<!-- //Heading -->
+		<h2 class="center-align">Youtube Search API</h2>
+		<!-- Details -->
+		<p>
+			Simple Youtube <a href="https://developers.google.com/youtube/v3/docs/search/list">Search</a> functionality using the <a href="https://developers.google.com/youtube/v3">V3 API</a>
+		</p>
+		<p>
+			Aesthetic using <a href="http://materializecss.com/">Materialize Css</a>
+		</p>
+		<p>
+			Check the source code on <a href="https://github.com/GavinMichael/youtube-searchAPI">GitHub</a>
+		</p>
+		<div class="row">
+			<div class="input-field col s6">
+				<!-- //Search Box -->
+				<input id="searchTxt" type="text" class="validate">
+				<label for="searchTxt">Search</label>
+
+			</div>
+			<div class="input-field col s6">
+				<!-- //Search Button -->
+				<a class="waves-effect waves-light btn" id="searchBtn" >
+					<i class="fa fa-search" aria-hidden="true"></i>
+					Search
+				</a>
+		</div>
+		<ul class="collection" id="results">
+			<!-- Start of Example template of one video element		
+
+			<li class="collection-item">
+
+				<div class="image-container">
+					<img class="image" src="./img/placeholderImage.jpg" alt="">
+				</div>
+
+				<div class="video-info-container">
+					<ul class="video-info">
+						<li class="title"><a href="#">Video Title</a></li>
+						<li class="creator"><a href="#">creator Name</a></li>
+						<li class="upload-date">1 year ago</li>
+						<li class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, fugiat temporibus vitae quam, earum beatae eum vel ...</li>
+					</ul>
+				</div>
+
+			</li>
+
+			End of Example template of one video element -->
+
+		</ul>
+	</div>
+	<!-- Custom Script -->
+	<script src="app.js"></script>
+</body>
+</html>
