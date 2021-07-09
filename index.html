@@ -4,19 +4,85 @@
 <head>
   <meta charset="UTF-8">
   <title>Index</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
 </head>
 
 <body>
-  <div class="lyrics-container">
-    <h1>lyrics test</h1>
-    <a href="./lyrics-test.html">lyrics playground</a>
-  </div>
-  <div class="youtube-container">
-    <h1>youtube test</h1>
-    <a href="./videos-test.html">videos playground</a>
+  <br>
+  <div class="container flex">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active">Home</li>
+      <li class="breadcrumb-item"><a href="./videos-test.html">Videos Playground</a></li>
+      <li class="breadcrumb-item"><a href="./wikifacts-test.html">Wiki Playground</a></li>
+    </ol>
+    <div class="row">
+      <div class="col-12 search">
+        <form id="search-form">
+          <div class="input-group input-group-lg">
+            <input class="form-control search-bar" id="button-0" placeholder="Search for a movie..." />
+            <button class="btn btn-primary input-group-btn" type="submit">
+              Search
+            </button>
+          </div>
+        </form>
+        <br>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <br>
+    <br>
+    <div class="card border-light mb-3" style="max-width: 20rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h4 class="card-title">Title</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit cupiditate
+          aliquam ipsam amet ratione dolorum aut omnis beatae voluptates, assumenda nisi optio tenetur officia ut
+          voluptas corporis mollitia laborum obcaecati!</p>
+      </div>
+    </div>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Section 1
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore repellendus assumenda dolore ullam libero iure vel, aliquid illo est praesentium suscipit consectetur! Laboriosam possimus dolore consequatur sapiente, dignissimos vero. Natus!
+            <br>
+            <br>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptatem, laborum quo labore nisi vel quia quaerat tempora, voluptatibus rerum, tempore expedita! Incidunt suscipit tempora omnis quia, animi voluptates modi?
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Section 2
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore repellendus assumenda dolore ullam libero iure vel, aliquid illo est praesentium suscipit consectetur! Laboriosam possimus dolore consequatur sapiente, dignissimos vero. Natus!
+            <br>
+            <br>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit voluptatem, laborum quo labore nisi vel quia quaerat tempora, voluptatibus rerum, tempore expedita! Incidunt suscipit tempora omnis quia, animi voluptates modi?
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- Custom Script -->
   <script src="./assets/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
