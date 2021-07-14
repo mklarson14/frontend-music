@@ -9,7 +9,7 @@ const url = "https://youtube.googleapis.com/youtube/v3/search?"
 const searchLabel = "&q="
 
 // const term = "bruno mars" doesn't work because of the space ... probably something like add a %
-const searchTermValue = ""
+// const searchTermValue = ""
 
 // api key
 const apiKey = "&key=AIzaSyDDF0RgrVThnjkyWd4yaeEsxi7CVLYNb84"
@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // add event listener on the search/submit button 
   searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
-    const searchString = document.getElementById("button-0");
+    const inputString = document.getElementById("button-0");
     // console.log(searchString.value);
-    const urlEncodedSearchString = encodeURIComponent(searchString.value);
+    // const urlEncodedSearchString = encodeURIComponent(inputString.value);
     // console.log(urlEncodedSearchString);
     // We have to call the div with a class of videos, in order for the videos to have a place to go to once rendered.
     const videos = document.querySelector('.videos');
-    fetch(url + searchLabel + searchString.value + apiKey + requiredLabel + maxResultsLabel)
+    fetch(url + searchLabel + inputString.value + apiKey + requiredLabel + maxResultsLabel)
     // we take the response from the fetch and send it as data with the .json function
       .then((response) => response.json())
       .then((data) => {
