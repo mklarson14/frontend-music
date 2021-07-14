@@ -2,6 +2,7 @@
 console.log("index.js");
 let searchString = "";
 let inputString = "";
+
 document.addEventListener("DOMContentLoaded", function () {
   // code here will execute after the document is loaded
   const searchForm = document.getElementById("search-form");
@@ -32,8 +33,70 @@ document.addEventListener("DOMContentLoaded", function () {
     // fetch from wikipedia
     getWikiBio();
     getWikiQuickFacts();
+    getYoutubeVideos()
   });
 });
+
+const getYoutubeVideos = () => {
+  const detailsUrl =
+    "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics";
+  const url = "https://youtube.googleapis.com/youtube/v3/search?";
+  const searchLabel = "&q=";
+  const apiKey = "&key=AIzaSyDDF0RgrVThnjkyWd4yaeEsxi7CVLYNb84";
+  const requiredLabel = "&videoEmbeddable=true&type=video";
+  const maxResultsLabel = "&maxResults=50";
+  const videos = document.querySelector(".videos");
+  fetch(
+    url +
+      searchLabel +
+      inputString.value +
+      apiKey +
+      requiredLabel +
+      maxResultsLabel
+  )
+    // we take the response from the fetch and send it as data with the .json function
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      // we take the data and .map through the items portion of the data and return the item.id.videoId of each item in the data
+      return data.items.map((item) => {
+        return item.id.videoId;
+      });
+    })
+    .then((ids) => {
+      console.log(ids);
+      // we fetch ids of the items from the previous array and join the ids to
+      return fetch(detailsUrl + apiKey + "&id=" + ids.join(","));
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      const sortedData = data.items.sort((a, b) => {
+        return b.statistics.viewCount - a.statistics.viewCount;
+      });
+      console.log(sortedData);
+      videos.innerHTML = renderVideo(sortedData);
+    });
+};
+
+function renderVideo(videoArray) {
+  // we map through all the results with the for each method and put each video on the page in this predetermined format
+  const videoHtmlArray = videoArray.map((item) => {
+    return `
+     <tr>
+     <td>
+     <a target =" _blank" href ="https://www.youtube.com/watch?v=${item.id.videoId}"> 
+     ${item.snippet.title}</td>
+     <td>
+     <img width="200" height="200" src="${item.snippet.thumbnails.high.url}"/>
+     </td>
+     <td>
+     <a target="_blank" href="https://www.youtube.com/channel/${item.snippet.channelId}">${item.snippet.channelTitle}</a>
+     </td>
+     </tr>`;
+  });
+  return videoHtmlArray.join("");
+}
 
 const getWikiBio = (url) => {
   fetch(
@@ -75,7 +138,7 @@ const getWikiBio = (url) => {
 };
 
 const getWikiQuickFacts = () => {
-  console.log('inside wikifacts function')
+  console.log("inside wikifacts function");
   const factsURL =
     "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&origin=*";
   fetch(factsURL + "&titles=" + searchString + "&rvsection=0&rvparse")
