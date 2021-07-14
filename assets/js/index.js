@@ -44,7 +44,7 @@ const getYoutubeVideos = () => {
   const searchLabel = "&q=";
   const apiKey = "&key=AIzaSyDDF0RgrVThnjkyWd4yaeEsxi7CVLYNb84";
   const requiredLabel = "&videoEmbeddable=true&type=video";
-  const maxResultsLabel = "&maxResults=50";
+  const maxResultsLabel = "&maxResults=10";
   const videos = document.querySelector(".videos");
   fetch(
     url +
@@ -82,18 +82,29 @@ const getYoutubeVideos = () => {
 function renderVideo(videoArray) {
   // we map through all the results with the for each method and put each video on the page in this predetermined format
   const videoHtmlArray = videoArray.map((item) => {
+    // return `
+    //  <tr>
+    //  <td>
+    //  <a target =" _blank" href ="https://www.youtube.com/watch?v=${item.id.videoId}"> 
+    //  ${item.snippet.title}</td>
+    //  <td>
+    //  <img width="200" height="200" src="${item.snippet.thumbnails.high.url}"/>
+    //  </td>
+    //  <td>
+    //  <a target="_blank" href="https://www.youtube.com/channel/${item.snippet.channelId}">${item.snippet.channelTitle}</a>
+    //  </td>
+    //  </tr>`
     return `
-     <tr>
-     <td>
-     <a target =" _blank" href ="https://www.youtube.com/watch?v=${item.id.videoId}"> 
-     ${item.snippet.title}</td>
-     <td>
-     <img width="200" height="200" src="${item.snippet.thumbnails.high.url}"/>
-     </td>
-     <td>
-     <a target="_blank" href="https://www.youtube.com/channel/${item.snippet.channelId}">${item.snippet.channelTitle}</a>
-     </td>
-     </tr>`;
+    <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header">Videos</div>
+        <div class="card-body">
+          <img width="200" height="200" src="${item.snippet.thumbnails.high.url}"/>
+          <a target="_blank" href="https://www.youtube.com/channel/${item.snippet.channelId}">${item.snippet.channelTitle}</a>
+          <h4 class="card-title">${item.snippet.title}</h4>
+          <p class="card-text">Video Info Video Info</p>
+          </div>
+      </div>
+    `
   });
   return videoHtmlArray.join("");
 }
