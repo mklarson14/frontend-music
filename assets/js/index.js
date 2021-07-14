@@ -49,7 +49,7 @@ const getYoutubeVideos = () => {
   fetch(
     url +
       searchLabel +
-      inputString.value +
+      searchString +
       apiKey +
       requiredLabel +
       maxResultsLabel
