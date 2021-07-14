@@ -42,7 +42,7 @@ const getYoutubeVideos = () => {
     "https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics";
   const url = "https://youtube.googleapis.com/youtube/v3/search?";
   const searchLabel = "&q=";
-  const apiKey = "&key=AIzaSyDDF0RgrVThnjkyWd4yaeEsxi7CVLYNb84";
+  const apiKey = "&key=AIzaSyAgOvRIkVbwzxOse-LHEvMmAmgLRiyZsnQ";
   const requiredLabel = "&videoEmbeddable=true&type=video";
   const maxResultsLabel = "&maxResults=10";
   const videos = document.querySelector(".videos");
@@ -95,13 +95,14 @@ function renderVideo(videoArray) {
     //  </td>
     //  </tr>`
     return `
-    <div class="card border-primary mb-3" style="max-width: 20rem;">
-        <div class="card-header">Videos</div>
+    <div class="card border-primary me-3 mb-3" style="max-width: 20rem;">
+        <div class="card-header">Video</div>
         <div class="card-body">
-          <img width="200" height="200" src="${item.snippet.thumbnails.high.url}"/>
-          <a target="_blank" href="https://www.youtube.com/channel/${item.snippet.channelId}">${item.snippet.channelTitle}</a>
+        <a target="_blank" href="https://www.youtube.com/channel/${item.snippet.channelId}"> 
+         <img width="200" height="200" src="${item.snippet.thumbnails.high.url}"/>
+          ${item.snippet.channelTitle}</a>
           <h4 class="card-title">${item.snippet.title}</h4>
-          <p class="card-text">Video Info Video Info</p>
+          <p class="card-text"></p>
           </div>
       </div>
     `
@@ -168,8 +169,8 @@ const getWikiQuickFacts = () => {
       // select div
       const contentTag = document.getElementById("artist-name");
       // set inner html of active div
-      contentTag.appendChild(newDiv.querySelector(".infobox"));
-      contentTag.style = "text-indent: 25px; color: black";
+      contentTag.innerHTML = newDiv.querySelector(".infobox").innerHTML;
+      contentTag.style = "text-indent: 25px; color: lightblue; font-size: 16px";
       // append links with wikipedia address
       const wikiLinks = contentTag.getElementsByTagName("a");
       // for loop to replace http://127.0.0.1:5500/ with https://en.wikipedia.com/
