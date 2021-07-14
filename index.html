@@ -12,67 +12,64 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="title1">MusicLink</div>
-  </div>
-  <div class="container">
-    <div class="title2">a youtube / wikipedia api mashup</div>
-  </div>
+  <div class="title1">MusicLink</div>
+  <div class="title2">A YouTube / Wikipedia API Mashup</div>
   <br>
   <div class="container">
-    <div class="videos">
-      <div class="card border-primary mb-3" style="max-width: 20rem;">
-        <div class="card-header">Videos</div>
-        <div class="card-body">
-          <h4 class="card-title">Video Title Video Title</h4>
-          <p class="card-text">Video Info Video Info</p>
-          <table class="videos"></table>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="videos">
-      <div class="card border-primary mb-3" style="max-width: 20rem;">
-        <div class="card-header">Videos</div>
-        <div class="card-body">
-          <h4 class="card-title">Video Title Video Title</h4>
-          <p class="card-text">Video Info Video Info</p>
-          <table class="videos"></table>
-        </div>
-      </div>
-    </div> -->
-    <div class="card border-info mb-3" style="max-width: 30rem;">
-      <div class="card-header">
-        <div class="col-12 search">
-          <form id="search-form">
-            <div class="input-group input-group-lg">
-              <input type="text" onfocus="this.value=''" value="Artist | Band Name" class="form-control search-bar"
-                style="background-color: white; color: black;" id="button-0" placeholder="Artist | Band Name" />
-              <button class="btn btn-primary input-group-btn" type="submit">
-                Search
-              </button>
+    <div class="row">
+      <div class="column1 col-8">
+        <div class="videos d-flex flex-wrap">
+
+          <div class="card border-primary mb-2" style="max-width: 20rem;">
+            <div class="card-header">Video</div>
+            <div class="card-body">
+              <img src="./assets/img/Color-MTV-Logo.jpg">
+              <h4 class="card-title"></h4>
+              <p class="card-text"></p>
+              <table class="videos"></table>
             </div>
-          </form>
-          <br>
+          </div>
+
+
         </div>
       </div>
-      <div class="card-body">
-        <h4 class="card-title" id="artist-name"></h4>
-        <!-- <p class="card-text">QUICKFACTSQUICKFACTSQUICKFACTSQUICKFACTSQUICKFACTSQUICKF</p> -->
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body" id="accordion-body0">
-                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
-                plugin adds the appropriate classes that we use to style each element. These classes control the
-                overall
-                appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
-                within the <code>.accordion-body</code>, though the transition does limit overflow.
+      <div class="column2 col-4">
+        <div class="card border-info mb-2" style="max-width: 30rem;">
+          <div class="card-header">
+            <div class="col-12 search">
+              <form id="search-form">
+                <div class="input-group input-group-lg">
+                  <input type="text" onfocus="this.value=''" value="Artist | Band Name" class="form-control search-bar"
+                    style="background-color: white; color: black;" id="button-0" placeholder="Artist | Band Name" />
+                  <button class="btn btn-primary input-group-btn" type="submit">
+                    Search
+                  </button>
+                </div>
+              </form>
+              <br>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title" id="artist-name"></h4>
+            <!-- <p class="card-text">QUICKFACTSQUICKFACTSQUICKFACTSQUICKFACTSQUICKFACTSQUICKF</p> -->
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body" id="accordion-body0">
+                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
+                    plugin adds the appropriate classes that we use to style each element. These classes control the
+                    overall
+                    appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
+                    custom CSS or overriding our default variables. It's also worth noting that just about any HTML can
+                    go
+                    within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
               </div>
             </div>
           </div>

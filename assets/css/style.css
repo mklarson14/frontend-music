@@ -1,7 +1,7 @@
 .title1 {
     display: flex;
     justify-content: center;
-    font-size: 80px;
+    font-size: 150px;
     color: whitesmoke;
 }
 .title2 {
@@ -11,14 +11,3 @@
     color: whitesmoke;
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-}
-
-.container {
-    display: flex;
-    justify-content:space-between;
-    flex-direction: row;
-}

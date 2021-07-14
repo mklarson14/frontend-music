@@ -12,7 +12,7 @@ const searchLabel = "&q="
 // const searchTermValue = ""
 
 // api key
-const apiKey = "&key=AIzaSyDDF0RgrVThnjkyWd4yaeEsxi7CVLYNb84"
+const apiKey = "&key=AIzaSyAgOvRIkVbwzxOse-LHEvMmAmgLRiyZsnQ"
 
 // required stuff
 const requiredLabel = "&videoEmbeddable=true&type=video"
