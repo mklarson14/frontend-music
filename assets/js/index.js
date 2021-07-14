@@ -96,12 +96,11 @@ function renderVideo(videoArray) {
     //  </tr>`
     return `
     <div class="card border-primary me-3 mb-3" style="max-width: 20rem;">
-        <div class="card-header">Video</div>
+        <div class="card-header">${item.snippet.title}</div>
         <div class="card-body">
-        <a target="_blank" href="https://www.youtube.com/channel/${item.snippet.channelId}"> 
-         <img width="200" height="200" src="${item.snippet.thumbnails.high.url}"/>
-          ${item.snippet.channelTitle}</a>
-          <h4 class="card-title">${item.snippet.title}</h4>
+          <a target="_blank" href="https://www.youtube.com/watch?v=${item.id}"> 
+         <img height="200" src="${item.snippet.thumbnails.high.url}"/></a>
+          <h4 class="card-title"></h4>
           <p class="card-text"></p>
           </div>
       </div>
